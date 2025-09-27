@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Sandbox Tester</title>
+  <link rel="stylesheet" href="/static/demo.css">
+</head>
+<body>
+  <div class="card">
+    <h2>🔧 Sandbox Tester</h2>
+    <p>Status: {% if ok %}<span class="badge">OK</span>{% else %}<span class="badge">FAILED</span>{% endif %}</p>
+    <p>{{ message }}</p>
+    <p><a href="{% url 'payments:shop' %}">Back to Shop</a></p>
+  </div>
+</body>
+</html>

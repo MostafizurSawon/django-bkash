@@ -1,0 +1,9 @@
+body{font-family:system-ui,Segoe UI,Roboto,Ubuntu;margin:24px}
+.card{max-width:720px;margin:auto;padding:24px;border:1px solid #e5e7eb;border-radius:12px}
+input,button,select{padding:10px 12px;border-radius:8px;border:1px solid #d1d5db}
+button{cursor:pointer;margin-top:8px}
+.badge{display:inline-block;padding:2px 8px;border-radius:999px;background:#eef2ff}
+.table{width:100%;border-collapse:collapse;margin-top:12px}
+.table th,.table td{border:1px solid #e5e7eb;padding:8px;text-align:left}
+a{color:#2563eb;text-decoration:none}
+a:hover{text-decoration:underline}

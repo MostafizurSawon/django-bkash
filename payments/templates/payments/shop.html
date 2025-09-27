@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Shop - bKash Demo</title>
+  <link rel="stylesheet" href="/static/demo.css">
+</head>
+<body>
+  <div class="card">
+    <h2>🛍️ Demo Shop</h2>
+    {% if messages %}{% for m in messages %}<div class="badge">{{ m }}</div>{% endfor %}{% endif %}
+    <table class="table">
+      <thead><tr><th>SKU</th><th>Product</th><th>Price (BDT)</th><th>Add</th></tr></thead>
+      <tbody>
+        {% for p in products %}
+        <tr>
+          <td>{{ p.sku }}</td>
+          <td>{{ p.name }}</td>
+          <td>{{ p.price }}</td>
+          <td>
+            <form method="post" action="{% url 'payments:add_to_cart' %}">
+              {% csrf_token %}
+              <input type="hidden" name="sku" value="{{ p.sku }}">
+              <input type="number" name="qty" value="1" min="1" style="width:80px">
+              <button type="submit">Add</button>
+            </form>
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    <p style="margin-top:12px">
+      <a href="{% url 'payments:cart' %}">View Cart</a> •
+      <a href="{% url 'payments:tester' %}">Sandbox Tester</a>
+    </p>
+  </div>
+</body>
+</html>
